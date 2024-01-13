@@ -30,7 +30,7 @@ class _landingScreenState extends State<landingScreen> {
           ],
         ),
       ),
-      backgroundColor: appBackgroundColor,
+      backgroundColor: KappBackgroundColor,
       body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(

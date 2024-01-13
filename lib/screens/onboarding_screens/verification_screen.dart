@@ -71,7 +71,7 @@ class _otpVerificationState extends State<otpVerification> {
   Widget build(BuildContext context) {
     //Fluttertoast.showToast(msg: "${widget.generatedOTP}");
     return Scaffold(
-      backgroundColor: appBackgroundColor,
+      backgroundColor: KappBackgroundColor,
       appBar: appbarBackButton(),
       body: ListView(
         children: [

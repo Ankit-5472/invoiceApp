@@ -13,7 +13,7 @@ class InvoiceScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: appBackgroundColor,
+        backgroundColor: KappBackgroundColor,
         appBar: AppBar(
           leading: const appbarBackButton(),
           bottom: TabBar(

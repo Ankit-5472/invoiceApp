@@ -24,3 +24,7 @@ const KonboardingScreenText = TextStyle(fontSize: 26.0, fontWeight: FontWeight.b
 
 const KappbarBackButton = TextStyle(fontWeight: FontWeight.bold, color: KprimaryColor, fontSize: 22.0);
 const KmainButtonText = TextStyle(fontWeight: FontWeight.bold, color: KsecondaryColor,fontSize: 20.0);
+
+
+const KpaidInvoiceDateText = TextStyle(color: KpaidInvoiceColor, fontWeight: FontWeight.bold);
+const KunpaidInvoiceDateText = TextStyle(color: KunpaidInvoiceColor, fontWeight: FontWeight.bold);

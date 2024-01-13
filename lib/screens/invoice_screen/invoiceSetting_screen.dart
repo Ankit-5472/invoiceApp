@@ -1,16 +1,9 @@
-import 'package:e_lenden/providers/item_list.dart';
-import 'package:e_lenden/screens/invoice_screen/invoicePreview_screen.dart';
-import 'package:e_lenden/services/pdf_generator/generate_pdf.dart';
 import 'package:e_lenden/utils/constants/color_constants.dart';
 import 'package:e_lenden/utils/constants/constants.dart';
 import 'package:e_lenden/widgets/main_widgets/bottom_button.dart';
 import 'package:e_lenden/widgets/main_widgets/user_input_details.dart';
-import 'package:e_lenden/widgets/onboarding_screen/onboardingBotton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pdf/pdf.dart';
-import 'package:printing/printing.dart';
-import 'package:provider/provider.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -67,7 +60,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 onTap: (){
                   Get.bottomSheet(
                     Container(
-                      color: appBackgroundColor,
+                      color: KappBackgroundColor,
                       child: Padding(
                         padding: const EdgeInsets.all(36.0),
                         child: Column(
