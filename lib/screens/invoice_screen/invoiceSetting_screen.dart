@@ -63,33 +63,32 @@ class _SettingScreenState extends State<SettingScreen> {
             Card(
               color: KsecondaryColor,
               child: ListTile(
-                title: Text("+ Add"),
-                subtitle: Text("Items"),
+                title: const Text("+ Add items", style: TextStyle(color: KprimaryColor),),
                 onTap: (){
                   Get.bottomSheet(
                     Container(
-                      color: KprimaryColor,
+                      color: appBackgroundColor,
                       child: Padding(
                         padding: const EdgeInsets.all(36.0),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Text("Item Name",style: KmainButtonText),
+                            const Text("Item Name",style: KonbordingBottonText),
+                            SizedBox(height: height * 0.005,),
                             userInputDetails(controller: itemName, name: "Name"),
-                            Text("Item cost",style: KmainButtonText),
+                            SizedBox(height: height * 0.01,),
+                            const Text("Item cost",style: KonbordingBottonText),
+                            SizedBox(height: height * 0.005,),
                             userInputDetails(controller: itemCost, name: "Cost"),
-                            Text("Quantity",style: KmainButtonText),
+                            SizedBox(height: height * 0.01,),
+                            const Text("Quantity",style: KonbordingBottonText),
+                            SizedBox(height: height * 0.005,),
                             userInputDetails(controller: quantity, name: "Number"),
                             SizedBox(height: height * 0.02,),
-                            Center(
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  addItemToList();
-                                  Get.back();// Close the bottom sheet
-                                },
-                                child: Text("Add Item"),
-                              ),
-                            ),
+                            bottomButton(onpressed: (){
+                              addItemToList();
+                              Get.back();
+                            }, text: const Text("Add", style: KmainButtonText),),
                           ],
                         ),
                       ),
@@ -111,14 +110,14 @@ class _SettingScreenState extends State<SettingScreen> {
             ),
             SizedBox(height: height * 0.04,),
             bottomButton(onpressed: () async {
-              final itemList = Provider.of<ItemListProvider>(context, listen: false).itemList;
-              final pdfBytes = await generatePDF(itemList);
-              print("$pdfBytes");
-              print('Generated PDF Size: ${pdfBytes.length} bytes');
-              await Printing.layoutPdf(
-                onLayout: (PdfPageFormat format) async => pdfBytes,
-              );
-            }, text: Text("Save", style: KmainButtonText,))
+              // final itemList = Provider.of<ItemListProvider>(context, listen: false).itemList;
+              // final pdfBytes = await generatePDF(itemList);
+              // print("$pdfBytes");
+              // print('Generated PDF Size: ${pdfBytes.length} bytes');
+              // await Printing.layoutPdf(
+              //   onLayout: (PdfPageFormat format) async => pdfBytes,
+              // );
+            }, text: const Text("Save", style: KmainButtonText,))
           ],
         ),
       ),
