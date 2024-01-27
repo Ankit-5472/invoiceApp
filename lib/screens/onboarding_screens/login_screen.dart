@@ -37,9 +37,19 @@ class _loginScreenState extends State<loginScreen> {
                 const Image(image: AssetImage("assets/logo/E-LenDen-logos_black.png")),
                 const Center(child: Text("Login",style: KonboardingScreenText),),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
-                userInputDetails(controller: _email, name: "Email address",),
+                userInputDetails(controller: _email, name: "Email address", validator: (text){
+                  if (text == null || text.isEmpty) {
+                    return 'Fill the Name';
+                  }
+                  return null;
+                },),
                 inputDivider(),
-                userInputDetails(controller: _phoneNumber, name: "Phone number",),
+                userInputDetails(controller: _phoneNumber, name: "Phone number", validator: (text){
+                  if (text == null || text.isEmpty) {
+                    return 'Fill the Name';
+                  }
+                  return null;
+                },),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
                 bottomButton(text: Text("Login",style: KmainButtonText,), onpressed: (){
                   generatedOtp = otpFunction.generateOTP();

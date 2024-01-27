@@ -41,16 +41,36 @@ class _SettingScreenState extends State<SettingScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text("Payer Name",style: KonboardingTextBotton.copyWith(color: KblackColor),),
-            userInputDetails(controller: payerName, name: "Name"),
+            userInputDetails(controller: payerName, name: "Name", validator: (text){
+              if (text == null || text.isEmpty) {
+                return 'Fill the Name';
+              }
+              return null;
+            },),
             SizedBox(height: height * 0.02,),
             Text("Email Address",style: KonboardingTextBotton.copyWith(color: KblackColor)),
-            userInputDetails(controller: payerEmail, name: "Email"),
+            userInputDetails(controller: payerEmail, name: "Email", validator: (text){
+              if (text == null || text.isEmpty) {
+                return 'Fill the Name';
+              }
+              return null;
+            },),
             SizedBox(height: height * 0.02,),
             Text("Phone Number",style: KonboardingTextBotton.copyWith(color: KblackColor)),
-            userInputDetails(controller: payerPhoneNumber, name: "Number"),
+            userInputDetails(controller: payerPhoneNumber, name: "Number", validator: (text){
+              if (text == null || text.isEmpty) {
+                return 'Fill the Name';
+              }
+              return null;
+            },),
             SizedBox(height: height * 0.02,),
             Text("Address",style: KonboardingTextBotton.copyWith(color: KblackColor)),
-            userInputDetails(controller: payarAddress, name: "Address"),
+            userInputDetails(controller: payarAddress, name: "Address", validator: (text){
+              if (text == null || text.isEmpty) {
+                return 'Fill the Name';
+              }
+              return null;
+            },),
             SizedBox(height: height * 0.02,),
             Text("Item",style: KonboardingTextBotton.copyWith(color: KblackColor)),
             Card(
@@ -68,15 +88,30 @@ class _SettingScreenState extends State<SettingScreen> {
                           children: [
                             const Text("Item Name",style: KonbordingBottonText),
                             SizedBox(height: height * 0.005,),
-                            userInputDetails(controller: itemName, name: "Name"),
+                            userInputDetails(controller: itemName, name: "Name", validator: (text){
+                              if (text == null || text.isEmpty) {
+                                return 'Fill the Name';
+                              }
+                              return null;
+                            },),
                             SizedBox(height: height * 0.01,),
                             const Text("Item cost",style: KonbordingBottonText),
                             SizedBox(height: height * 0.005,),
-                            userInputDetails(controller: itemCost, name: "Cost"),
+                            userInputDetails(controller: itemCost, name: "Cost", validator: (text){
+                              if (text == null || text.isEmpty) {
+                                return 'Fill the Name';
+                              }
+                              return null;
+                            },),
                             SizedBox(height: height * 0.01,),
                             const Text("Quantity",style: KonbordingBottonText),
                             SizedBox(height: height * 0.005,),
-                            userInputDetails(controller: quantity, name: "Number"),
+                            userInputDetails(controller: quantity, name: "Number", validator: (text){
+                              if (text == null || text.isEmpty) {
+                                return 'Fill the Name';
+                              }
+                              return null;
+                            },),
                             SizedBox(height: height * 0.02,),
                             bottomButton(onpressed: (){
                               addItemToList();
